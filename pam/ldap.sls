@@ -1,27 +1,19 @@
-{% from "pam-ldap/map.jinja" import pam with context %}
-
-tls_cacertfile:
-    file.managed:
-        - source: salt://pam-ldap/files/cert
-        - user: root
-        - group: root
-        - mode: 640
+{% from "pam/map.jinja" import pam with context %}
 
 ldap:
-    pkg:
-        - installed
-        - name: {{ pam.ldap }}
+  pkg.installed:
+    - name: {{ pam.ldap_pkg }}
 
 {{ pam.config }}:
    file.managed:
-        - source: salt://pam-ldap/files/ldap.conf
+        - source: salt://pam/files/ldap.conf
         - user: root
         - group: root
         - mode: 644
 
 ldap_conf:
   file.append:
-    - name: {{ pam.ldap-config }}
+    - name: {{ pam.ldap_config }}
     - text:
         - host {{ salt['pillar.get']('pam:ldap:host') }}
         {% if salt['pillar.get']('pam:ldap:port') %}
