@@ -1,5 +1,9 @@
-template formula
+pam formula
 ================
+
+0.0.6 (2015-09-30)
+
+- Updating pam to match pam-ldap
 
 0.0.5 (2014-07-28)
 
