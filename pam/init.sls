@@ -1,10 +1,2 @@
-{% from "template/map.jinja" import template with context %}
+{% from "pam/map.jinja" import pam with context %}
 
-template:
-  pkg:
-    - installed
-    - name: {{ template.pkg }}
-  service:
-    - running
-    - name: {{ template.service }}
-    - enable: True
