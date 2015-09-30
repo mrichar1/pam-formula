@@ -4,7 +4,7 @@ ldap:
   pkg.installed:
     - name: {{ pam.ldap_pkg }}
 
-{{ pam.config }}:
+{{ pam.ldap_config }}:
   file.managed:
     - source: salt://pam/files/ldap.conf
     - user: root
