@@ -1,7 +1,11 @@
-{% set template = salt['grains.filter_by']({
-    'default': {
-        'pkg': 'template',
-        'service': 'template',
-        'config': '/etc/template.conf',
+{% set pam = salt['grains.filter_by']({
+    'Ubuntu': {
+        'ldap': 'ldap-auth-client',
+        'nsd': 'nscd',
+        'ldap-config': '/etc/ldap.conf',
     },
-}, merge=salt['pillar.get']('template:lookup')) %}
+    'Debian': {
+        'ldap': 'libpam-ldap',
+        'ldap-config': '/etc/ldap.conf',
+    },
+}, merge=salt['pillar.get']('pam:lookup')) %}
