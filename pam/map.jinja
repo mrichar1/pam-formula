@@ -5,7 +5,7 @@
         'ldap_config': '/etc/ldap.conf',
     },
     'Debian': {
-        'ldap_pkg': 'libpam-ldap',
+        'ldap_pkg': 'libpam-ldapd',
         'ldap_config': '/etc/ldap.conf',
     },
 }, merge=salt['pillar.get']('pam:lookup')) %}
