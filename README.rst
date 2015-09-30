@@ -1,9 +1,8 @@
 ================
-template-formula
+pam-formula
 ================
 
-A saltstack formula that is empty. It has dummy content to help with a quick
-start on a new formula.
+Formula to set up and configuring pam authentication modules.
 
 .. note::
 
@@ -16,7 +15,7 @@ Available states
 .. contents::
     :local:
 
-``template``
+``pam.ldap``
 ------------
 
-Installs the template package, and starts the associated template service.
+Configure ldap authentication.
