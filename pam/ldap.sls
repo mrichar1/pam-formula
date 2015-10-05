@@ -39,8 +39,3 @@ ldap_conf:
       - tls_cacertfile {{ salt['pillar.get']('pam:ldap:tls_cacertfile', '') }}
       - tls_cacertdir {{ salt['pillar.get']('pam:ldap:tls_cacertdir', '') }}
       {% endif %}
-
-/etc/pam.d/common-session:
-  file.append:
-    - text:
-      - session required    pam_mkhomedir.so skel=/etc/skel umask=0022

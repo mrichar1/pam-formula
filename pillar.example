@@ -16,4 +16,3 @@ pam:
     tls_checkpeer: 'yes'
     tls_cacertfile: /etc/ssl/ca.cert
     tls_cacertdir: /etc/ssl/certs
-
