@@ -8,4 +8,4 @@
 
 pam-auth-update:
   cmd.run:
-    - name: pam-auth-update
+    - name: pam-auth-update --force
