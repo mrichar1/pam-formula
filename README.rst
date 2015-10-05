@@ -21,6 +21,7 @@ Available states
 Configures mkhomedir module.
 
 ``pam.mkhomedir``
+------------
 
 Enable user home creation.
 
