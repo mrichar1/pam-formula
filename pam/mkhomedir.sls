@@ -2,7 +2,7 @@
 
 {{ pam.mkhomedir_config }}:
   file.managed:
-    - source: salt://pam/files/my_mkhomedir
+    - source: salt://pam/files/mkhomedir
     - user: root
     - group: root
 
