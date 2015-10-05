@@ -18,4 +18,19 @@ Available states
 ``pam.ldap``
 ------------
 
-Configure ldap authentication.
+Configures mkhomedir module.
+
+``pam.mkhomedir``
+
+Enable user home creation.
+
+``pam.ccreds``
+------------
+
+Configures pam module to cache authentication credentials.
+
+``pam.update``
+------------
+
+Updates pam.d files.
+
