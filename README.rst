@@ -18,7 +18,7 @@ Available states
 ``pam.ldap``
 ------------
 
-Configures mkhomedir module.
+Configures ldap authentication module.
 
 ``pam.mkhomedir``
 ------------
