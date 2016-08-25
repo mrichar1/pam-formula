@@ -1,0 +1,54 @@
+Name: {{ config.get('name', file_name) }}
+Default: {{ config.get('default', 'no') }}
+Priority: {{ config.get('priority', '256') }}
+{%- if 'conflicts' in config %}
+Conflicts: {{ config.conflicts }}
+{%- endif %}
+
+{%- if 'auth_type' in config %}
+Auth-Type: {{ config.auth_type }}
+{%- endif %}
+{%- if 'auth' in config %}
+Auth:
+        {{ config.auth }}
+{%- endif %}
+{%- if 'auth_initial' in config %}
+Auth-Initial:
+        {{ config.auth_initial }}
+{%- endif %}
+
+{%- if 'account_type' in config %}
+Account-Type: {{ config.account_type }}
+{%- endif %}
+{%- if 'account' in config %}
+Account:
+        {{ config.account }}
+{%- endif %}
+{%- if 'account_initial' in config %}
+Account-Initial:
+        {{ config.account_initial }}
+{%- endif %}
+
+{%- if 'session_type' in config %}
+Session-Type: {{ config.session_type }}
+{%- endif %}
+{%- if 'session' in config %}
+Session:
+        {{ config.session }}
+{%- endif %}
+{%- if 'session_initial' in config %}
+Session-Initial:
+        {{ config.session_initial }}
+{%- endif %}
+
+{%- if 'password_type' in config %}
+Password-Type: {{ config.password_type }}
+{%- endif %}
+{%- if 'password' in config %}
+Password:
+        {{ config.password }}
+{%- endif %}
+{%- if 'password_initial' in config %}
+Password-Initial:
+        {{ config.password_initial }}
+{%- endif %}

@@ -6,6 +6,7 @@
         'mkhomedir_pkg': 'libpam-mkhomedir',
         'mkhomedir_config': '/usr/share/pam-configs/mkhomedir',
         'ccreds_pkg': 'libpam-ccreds',
+        'pam_config': {},
     },
     'Debian': {
         'ldap_pkg': 'libpam-ldapd',
@@ -13,5 +14,6 @@
         'mkhomedir_pkg': 'libpam-ccreds',
         'mkhomedir_config': '/usr/share/pam-configs/mkhomedir',
         'ccreds_pkg': 'libpam-ccreds',
+        'pam_config': {},
     },
 }, merge=salt['pillar.get']('pam:lookup')) %}
