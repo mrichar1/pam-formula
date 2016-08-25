@@ -6,5 +6,16 @@ pam-auth-update:
     - name: DEBIAN_FRONTEND=noninteractive pam-auth-update --force
 {% endif %}
 
-#TODO: pam-config
+{% for file_name, config in pam['pam_config'].items() %}
+/usr/share/pam-configs/{{ file_name }}:
+  file.managed:
+    - source: salt://pam/files/pam-config.jinja
+    - template: jinja
+    - watch_in:
+      - cmd: pam-auth-update
+    - defaults:
+      config: {{ config }}
+      file_name: {{ file_name }}
+{% endfor %}
+
 #TODO: authconfig

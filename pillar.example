@@ -16,3 +16,16 @@ pam:
     tls_checkpeer: 'yes'
     tls_cacertfile: /etc/ssl/ca.cert
     tls_cacertdir: /etc/ssl/certs
+
+  pam_config:
+    access:
+      # defaults to above key if unset
+      name: PAM Access Module
+      # defaults to "no" if unset
+      default: "yes"
+      conflicts: cracklib
+      # Defaults to 256 if unset
+      priority: 0
+      # x, x_type and x_initial. x can be: auth, account, session, password
+      account_type: Additional
+      account: "required pam_access.so"
