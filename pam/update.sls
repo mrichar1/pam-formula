@@ -2,6 +2,10 @@
 
 {% if grains.os_family == 'Debian' %}
 pam-auth-update:
+  module.run:
+    - name: file.remove
+    - path: /var/lib/pam/seen
+
   cmd.run:
     - name: DEBIAN_FRONTEND=noninteractive pam-auth-update --force
 {% endif %}
