@@ -16,7 +16,7 @@ pam-auth-update:
   file.managed:
     - source: salt://pam/files/pam-config.jinja
     - template: jinja
-    - watch_in:
+    - onchanges_in:
       - cmd: pam-auth-update
     - defaults:
       config: {{ config }}
